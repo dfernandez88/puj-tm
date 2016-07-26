@@ -1,0 +1,132 @@
+<!doctype html>
+<html ng-app="webApp">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  
+  <!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="bower_components/angular-material/angular-material.min.css"  media="screen,projection"/>
+  <link rel="stylesheet" href="bower_components/ng-tags-input/ng-tags-input.min.css" />
+  <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css" />
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/panel.css">
+  <link rel="stylesheet" href="css/tags.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+
+</head>
+<body layout="row" ng-controller="MainCtrl">
+    
+  <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="getMinRes()">
+        
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+  
+        <md-button class="md-icon-button" aria-label="Side Panel" ng-click="openLeftMenu()" ng-show="!getMinRes()">
+          <!--<md-tooltip>Close</md-tooltip>-->
+          <md-icon ng-show="!getMinRes()">close</md-icon>
+        </md-button>  
+
+        <h2 class="md-toolbar-tools">Flash Links</h2>
+      </div>  
+    </md-toolbar>
+
+    <md-list>
+      <md-subheader class="md-no-sticky">Links</md-subheader>
+      <md-list-item ng-click="openLeftMenu()">
+        <md-icon class="md-default-theme" class="material-icons"><i class="material-icons">account_circle</i></md-icon>
+        <p>Mine</p>
+        <div class="md-secondary">2</div>
+      </md-list-item>
+      <md-list-item ng-click="openLeftMenu()">
+        <md-icon class="md-default-theme" class="material-icons">supervisor_account</md-icon>
+        <p>Everyone</p>
+        <div class="md-secondary">2</div>
+      </md-list-item>          
+
+      <md-subheader class="md-no-sticky">History</md-subheader>
+
+    </md-list>
+  </md-sidenav>
+
+
+  <div layout="column" class="relative" layout-fill role="main">      
+    <md-button class="md-primary md-fab md-fab-bottom-right" ng-click="newLink()">
+      <md-icon>add</md-icon>
+    </md-button>
+      
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        
+        <md-button class="md-icon-button" aria-label="Side Panel" ng-click="openLeftMenu()" ng-show="!getMinRes()">
+          <!--<md-tooltip>Menu</md-tooltip>-->
+          <md-icon class="md-default-theme" class="material-icons" ng-show="!getMinRes()">menu</md-icon>
+        </md-button>
+        
+        <h2>
+          <span ng-show="!getMinRes()">Flash Links</span>
+        </h2>
+        <span flex></span>
+        <span class="md-body-1">Jorge Victoria</span>
+      </div>
+    </md-toolbar>
+    
+      
+    <md-content flex md-scroll-y style="background: #eee">
+      <ui-view layout="column" layout-fill layout-padding>
+        <div ng-view=""></div>
+      </ui-view>
+
+    </md-content>
+      
+
+  </div>
+
+
+
+      
+      
+      <!--
+      <div class="footer">
+        <div class="container">
+          <p>Jorge Victoria</p>
+        </div>
+      </div>
+      -->
+    
+
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+   <script>
+     !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+     (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+     r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+     }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+     ga('create', 'UA-XXXXX-X');
+     ga('send', 'pageview');
+  </script>
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+  <script src="bower_components/angular-material/angular-material.min.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.js"></script>
+  <script type="text/javascript" src="bower_components/ng-tags-input/ng-tags-input.min.js"></script>
+  
+  <script src="js/app.js"></script>
+  <script src="js/controllers/main.js"></script>
+  <script src="js/controllers/about.js"></script>
+  <script src="js/services/linksService.js"></script>
+  <script src="js/filters/http.js"></script>
+  <script src="js/filters/tags.js"></script>
+
+</body>
+</html>
