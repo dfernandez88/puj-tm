@@ -10,51 +10,21 @@
    * Controller of the webApp
    */
   angular.module('webApp')
-    .controller('MainCtrl', [
+    .controller('NewLinkCtrl', [
       '$scope',
       '$q',
       '$mdPanel',
       '$mdMedia',
-      'LinksService',
-      'httpFilter',
-      MainCtrl])
+      NewLinkCtrl])
     .controller('AddLinkDialogCtrl', [
       '$scope',
       'mdPanelRef',
       'LinksService',
       AddLinkDialogCtrl]);
 
-  function MainCtrl($scope, $q, $mdPanel, $mdMedia, LinksService, httpFilter) {
+  function NewLinkCtrl($scope, $q, $mdPanel, $mdMedia) {
     $scope._mdPanel = $mdPanel;
-    $scope.disableParentScroll = false;
     
-    $scope.links = [];
-    $scope.search = LinksService.getSearchFilter();
-
-    $scope.getMinRes = function(){
-      return $mdMedia('gt-xs');
-    };
-
-    $scope.updateLinksToShow = function(){
-      var filter = $scope.search;
-
-      if(filter === "*"){
-        $scope.links = LinksService.getLinks();
-        return;
-      }
-
-      $scope.links = [];
-      _.each(LinksService.getLinks(), function(item) {
-        for (var i = 0; i < item.tags.length; i++) {
-          var tag = item.tags[i];
-          if (tag.toLowerCase().indexOf(filter) !== -1) {
-            $scope.links.push(item);
-            break;
-          }
-        }
-      });
-    };
-
     $scope.getPanelConfig = function() {
       var position = $scope._mdPanel.newPanelPosition()
         .absolute()
@@ -88,44 +58,12 @@
       var config = $scope.getPanelConfig();
       $scope._mdPanel.open(config);
     };
-
-    $scope.editLink = function(id) {
-      var edit = LinksService.getLinkById(id);
-      var config = $scope.getPanelConfig();
-      config["locals"] = {
-        'type': 'edit',
-        'id': id,  
-        'title': edit.title,
-        'url': httpFilter(edit.url),
-        'tags': edit.tags
-      }
-      $scope._mdPanel.open(config);
-    };
-
-    $scope.getAllLinksCount = function(){
-      return LinksService.getLinks().length;
-    };
-
-    $scope.$watch(function() { return LinksService.getSearchFilter(); },
-      function(value) {
-        $scope.search = value;
-        $scope.updateLinksToShow();
-      }
-    );
-
-    $scope.$watch(function() { return LinksService.getLinks(); },
-      function(value) {
-        $scope.updateLinksToShow();
-      },
-      true
-    );
-
-  }
+  };
 
   function AddLinkDialogCtrl($scope, mdPanelRef, LinksService) {
     this._mdPanelRef = mdPanelRef;
     this.LinksService = LinksService;
-  }
+  };
 
   AddLinkDialogCtrl.prototype.addLink = function() {
     this.LinksService.addLink(this.title, this.url, this.tags);
@@ -140,6 +78,7 @@
   AddLinkDialogCtrl.prototype.deleteLink = function() {
     this.LinksService.deleteLink(this.id, this.title, this.url, this.tags);
     this.closeDialog();
+    this.LinksService.setSearchFilter("*");
   };
 
   AddLinkDialogCtrl.prototype.closeDialog = function() {
