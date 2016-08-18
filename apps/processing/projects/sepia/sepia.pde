@@ -28,7 +28,7 @@ void setup(){
       
       //calculamos un valor promediado de las tres bandas de
       //color de la imagen.
-      float gray = red(c)*0.3+green(c)*0.59+blue(c)*0.11;
+      float gray = (red(c)+green(c)+blue(c))/3;
       
       //Aproximamos el color obtenido al color de la paleta
       img.pixels[i] = palette[int(gray)];
