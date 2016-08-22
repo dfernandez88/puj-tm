@@ -2,10 +2,10 @@
 
 /**
  * @ngdoc function
- * @name webApp.service:posts
+ * @name webApp.service:LinksService
  * @description
- * # MainCtrl
- * Controller of the webApp
+ * # LinksService
+ * Service of the webApp
  */
 
 (function() {

@@ -4,9 +4,9 @@
 
   /**
    * @ngdoc function
-   * @name webApp.controller:MainCtrl
+   * @name webApp.controller:MenuCtrl
    * @description
-   * # MainCtrl
+   * # MenuCtrl
    * Controller of the webApp
    */
   angular.module('webApp')
