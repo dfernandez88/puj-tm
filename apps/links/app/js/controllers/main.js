@@ -26,9 +26,8 @@
 
   function MainCtrl($scope, $q, $mdPanel, $mdMedia, LinksService, httpFilter) {
     $scope._mdPanel = $mdPanel;
-    $scope.disableParentScroll = false;
     
-    $scope.links = [];
+    $scope.links = LinksService.getLinks();
     $scope.search = LinksService.getSearchFilter();
 
     $scope.getMinRes = function(){
@@ -63,7 +62,7 @@
         attachTo: angular.element(document.body),
         controller: AddLinkDialogCtrl,
         controllerAs: 'ctrl',
-        disableParentScroll: $scope.disableParentScroll ,
+        disableParentScroll: true ,
         templateUrl: 'views/panel.tmpl.html',
         hasBackdrop: true,
         panelClass: 'demo-dialog-example',

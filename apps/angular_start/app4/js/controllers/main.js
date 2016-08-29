@@ -34,7 +34,7 @@
 
     $scope.$watch(function() { 
       console.log($mdMedia('gt-xs'));
-      return $mdMedia('lg'); 
+      return $mdMedia('gt-xs'); 
     });
   }
 

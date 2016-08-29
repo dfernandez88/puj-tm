@@ -30,6 +30,7 @@
       };
 
       function getTags(){
+        tags.sort();
         return tags;
       };
 

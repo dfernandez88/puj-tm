@@ -19,22 +19,12 @@
       MenuCtrl]);
 
   function MenuCtrl($scope, $q, $mdSidenav, $mdMedia, LinksService) {
-    $scope.disableParentScroll = false;
-    //$scope.links = "social";
     $scope.tagFilter = "social";
-
     $scope.tags = LinksService.getTags();
-    $scope.tags.sort();
-    //console.log($scope.links);
-    /*$scope.$watch(function() { 
-      console.log($mdMedia('md'));
-      return $mdMedia('lg'); 
-    });*/
 
     $scope.$watch(function() { return LinksService.getTags(); },
       function(value) {
         $scope.tags = value;
-        $scope.tags.sort();
       }
     );
 
