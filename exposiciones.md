@@ -1,6 +1,6 @@
 #Exposiciones
 
-La exposicion debe tener una duración aprox de 20 minutos. Para cada tema cubrir algo de historia o evolución, como funciona técnicamente el producto. Pueden presentar materiales de soporte, como videos o demos en cuanto sea posible.
+La exposicion debe tener una duración aprox de 20 minutos. Para cada tema cubrir algo de historia o evolución y como funciona técnicamente el producto. Pueden presentar materiales de soporte, como videos o demos en cuanto sea posible.
 
 * Paula Correa - Juan Pablo Méndez:	Monitores (VGA SVGA CRT, LCD, Plasma LED).
 * Gustavo Tinoco - Daniela Velez:	Parlantes(oofers, medios, bobina movil, condensador, tweeters, cinta).
