@@ -10,3 +10,4 @@
 * [Sintetizadores y Protocolos MIDI](https://docs.google.com/presentation/d/1VZk1Ol9Vi2NKq3UoaJ_n3UdfTSK_4YaN6QroePpp6D0/pub?start=false&loop=false&delayms=3000) Procesadores y efectos, sintesis de sonido y tecnologías MIDI.
 * [Streaming](https://docs.google.com/presentation/d/1lKMM5pHH1cyP4YLYf3wmOFC7GBEMToAXrE2hVNS75F0/pub?start=false&loop=false&delayms=3000) WebRTC y Laboratorio de Streaming.
 * [Video Digital](https://docs.google.com/presentation/d/1_FS4GJTYXyW1P2TkfHoHbzfxSgREPBW2LJrwmLDXebE/pub?start=false&loop=false&delayms=3000) Aliasing, formatos, block matching coding.
+* [Animación Digital](https://docs.google.com/presentation/d/1d_3lOOVI5JM6hiGncV1UZQ__WDyxvC5zq2XA10hJQqE/pub?start=false&loop=false&delayms=3000) Animación por frames, en tiempo real, ejemplos con Blender y Processing.
